@@ -7,6 +7,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+body.hideScroll {
+    overflow: hidden;
+}
+
 a {
     color: #ff5e84;
     font-weight: bold;
@@ -139,14 +143,18 @@ footer a:hover {
 
     position: absolute;
     top: 0;
-
-    width: 100vw;
-    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
     display: flex;
     justify-content: center;
 
     transition: 400ms;
+}
+
+#modal.addScroll {
+    overflow: auto;
 }
 
 #modal .content {
@@ -312,8 +320,6 @@ form button:hover {
 
 section#title {
     text-align: center;
-
-    margin: 64px 0;
 }
 
 section#title p {
@@ -325,4 +331,21 @@ section#title h1 {
     margin: 0;
 
     font-size: 28px;
+}
+
+section#ideas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    gap: 20px;
+}
+
+section#ideas .idea {
+    margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+    margin-top: 64px;
 }
